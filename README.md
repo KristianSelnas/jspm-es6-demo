@@ -11,7 +11,7 @@ You must have [Node](https://nodejs.org/en/) and [Gulp](http://gulpjs.com/) inst
 ```
 > jspm install
 > npm install
-> tsd install
+> tsd install angular angular-ui-router
 ```
 
 ## Mock server
