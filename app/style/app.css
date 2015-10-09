@@ -1,0 +1,108 @@
+@import url(../../vendor/jspm_packages/github/twbs/bootstrap@4.0.0-alpha/css/bootstrap.css);
+body {
+  background: #fff; }
+
+.o-button {
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px; }
+  .o-button:focus {
+    outline: none; }
+  .o-button:hover {
+    background: #eee; }
+  .o-button--small {
+    font-size: 0.8em; }
+  .o-button--subtle {
+    background: transparent;
+    border: none; }
+
+.o-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5); }
+  .o-modal__content {
+    position: absolute;
+    display: inline-block;
+    min-height: 40vh;
+    min-width: 40vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px; }
+  .o-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+
+.c-whiteboard__controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; }
+  .c-whiteboard__controls > * {
+    flex: 0 0 auto; }
+
+.c-whiteboard__notes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Reenie Beanie",arial,sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .c-whiteboard__notes > *:nth-child(even) {
+    transform: rotate(4deg);
+    top: 5px; }
+  .c-whiteboard__notes > *:nth-child(3n) {
+    transform: rotate(-3deg);
+    top: -5px; }
+  .c-whiteboard__notes > *:nth-child(5n) {
+    transform: rotate(5deg);
+    top: -10px; }
+
+.c-note {
+  flex: 0 0 15rem;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  width: 15rem;
+  padding: 1rem;
+  padding-bottom: 0.2rem;
+  margin: 1rem;
+  box-shadow: 0 10px 6px -6px #777;
+  position: relative; }
+  .c-note__title {
+    flex: 0 0 auto;
+    text-align: right; }
+  .c-note__body {
+    flex: 1 0 auto; }
+  .c-note__controls {
+    text-align: right;
+    display: none; }
+  .c-note:hover .c-note__controls {
+    display: block; }
+
+.c-note-edit__color {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer; }
+  .c-note-edit__color--selected {
+    outline: 1px dashed #ccc; }
+
+.u-notecolor-color1 {
+  background: #ffc; }
+
+.u-notecolor-color2 {
+  background: #cfc; }
+
+.u-notecolor-color3 {
+  background: #ccf; }
+
+.u-notecolor-color4 {
+  background: #fcf; }

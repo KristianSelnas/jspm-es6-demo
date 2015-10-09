@@ -1,0 +1,13 @@
+.c-note-edit {
+
+  &__color {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+
+    &--selected {
+      outline: 1px dashed #ccc;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<section class="c-whiteboard">
+
+    <div class="c-whiteboard__controls">
+        <button class="o-button o-button-add" ui-sref="whiteboard.note">Add note</button>
+    </div>
+
+    <ul class="c-whiteboard__notes">
+        <wb-note note="note" ng-repeat="note in vm.notes"></wb-note>
+    </ul>
+
+
+    <div ui-view="note-edit"></div>
+</section>

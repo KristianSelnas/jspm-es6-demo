@@ -1,0 +1,34 @@
+<div class="o-modal">
+    <div class="o-modal__content c-note-edit">
+        <button class="o-button o-modal__close" ui-sref="whiteboard">Close</button>
+
+        <form ng-submit="vm.saveOrUpdate()">
+            <fieldset class="form-group">
+                <label for="title">Short identifier</label>
+                <input class="form-control col-md-1" type="text" id="title" ng-model="vm.note.title" maxlength="10" placeholder="e.g. a Jira number">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="text">Description</label>
+                <input class="form-control" type="text" id="text" maxlength="160" ng-model="vm.note.text" placeholder="max 160 characters">
+            </fieldset>
+            <fieldset class="form-group">
+                <label >Note color</label>
+                <p>
+                    <label class="c-note-edit__color u-notecolor-color1" ng-class="{'c-note-edit__color--selected': vm.note.color=='color1'}">
+                        <input type="radio" name="color" value="color1" ng-model="vm.note.color" hidden>
+                    </label>
+                    <label class="c-note-edit__color u-notecolor-color2" ng-class="{'c-note-edit__color--selected': vm.note.color=='color2'}">
+                        <input type="radio" name="color" value="color2" ng-model="vm.note.color" hidden>
+                    </label>
+                    <label class="c-note-edit__color u-notecolor-color3" ng-class="{'c-note-edit__color--selected': vm.note.color=='color3'}">
+                        <input type="radio" name="color" value="color3" ng-model="vm.note.color" hidden>
+                    </label>
+                    <label class="c-note-edit__color u-notecolor-color4" ng-class="{'c-note-edit__color--selected': vm.note.color=='color4'}">
+                        <input type="radio" name="color" value="color4" ng-model="vm.note.color" hidden>
+                    </label>
+                </p>
+            </fieldset>
+            <button class="o-button" type="submit">Save</button>
+        </form>
+    </div>
+</div>

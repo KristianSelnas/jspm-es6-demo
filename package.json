@@ -1,0 +1,22 @@
+{
+  "jspm": {
+    "directories": {
+      "packages": "vendor/jspm_packages"
+    },
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "angular": "npm:angular@^1.4.7",
+      "angular-ui-router": "npm:angular-ui-router@^0.2.15",
+      "ts": "github:frankwallis/plugin-typescript@^2.0.17",
+      "twbs/bootstrap": "github:twbs/bootstrap@4.0.0-alpha"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-sass": "^2.0.4"
+  }
+}

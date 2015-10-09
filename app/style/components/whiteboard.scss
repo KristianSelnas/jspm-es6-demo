@@ -1,0 +1,36 @@
+
+.c-whiteboard {
+
+  &__controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__notes {
+    @include list-bare();
+    font-family:"Reenie Beanie",arial,sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    >*:nth-child(even) {
+      transform: rotate(4deg);
+      top: 5px;
+    }
+
+    >*:nth-child(3n) {
+      transform: rotate(-3deg);
+      top: -5px;
+    }
+
+    >*:nth-child(5n) {
+      transform: rotate(5deg);
+      top: -10px;
+    }
+  }
+}

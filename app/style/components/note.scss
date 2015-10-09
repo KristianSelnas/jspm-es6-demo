@@ -1,0 +1,37 @@
+
+$c-note-size: 15rem;
+
+.c-note {
+  flex: 0 0 $c-note-size;
+  display: flex;
+  flex-direction: column;
+  height: $c-note-size;
+  width: $c-note-size;
+  padding: 1rem;
+  padding-bottom: 0.2rem;
+  margin: 1rem;
+  box-shadow: 0 10px 6px -6px #777;
+  position: relative;
+
+
+  &__title {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+
+  &__body {
+    flex: 1 0 auto;
+  }
+
+  &__controls {
+    text-align: right;
+    display: none;
+  }
+
+  &:hover {
+    .c-note__controls {
+      display: block;
+    }
+  }
+}
+

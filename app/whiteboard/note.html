@@ -1,0 +1,8 @@
+<li class="c-note u-notecolor-{{vm.note.color}}">
+    <h2 class="c-note__title">{{vm.note.title}}</h2>
+    <p class="c-note__body">{{vm.note.text}}</p>
+    <div class="c-note__controls">
+        <button class="o-button o-button--small o-button--subtle" ui-sref="whiteboard.note({id: vm.note.id})">Edit</button>
+        <button class="o-button o-button--small o-button--subtle" ng-click="vm.deleteNote()">Delete</button>
+    </div>
+</li>
