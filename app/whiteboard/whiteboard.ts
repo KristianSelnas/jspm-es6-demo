@@ -1,6 +1,6 @@
 //noinspection TypeScriptCheckImport
-import {Note, NotesService} from "./notes-service";
-import * as noteEvents from "./note-events";
+import {Note, NotesService} from "../notes/notes-service";
+import * as noteEvents from "../notes/note-events";
 
 export class WhiteboardController {
 

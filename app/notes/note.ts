@@ -26,6 +26,6 @@ export default (): angular.IDirective => {
         controller: NoteController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/whiteboard/note.html"
+        templateUrl: "app/notes/note.html"
     };
 }
