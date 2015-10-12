@@ -1,12 +1,12 @@
 System.config({
-  baseURL: "/",
-  defaultJSExtensions: true,
+  baseURL: "/dist/index.html",
+  defaultJSExtensions: false,
   transpiler: "typescript",
   typescriptOptions: {
     "experimentalDecorators": true
   },
   paths: {
-    "app": "app/app",
+    "app": "src/app/app",
     "github:*": "vendor/jspm_packages/github/*",
     "npm:*": "vendor/jspm_packages/npm/*"
   },
