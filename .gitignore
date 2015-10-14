@@ -3,3 +3,5 @@
 /vendor
 /typings
 /mockserver/node_modules
+/dist
+/src/app/templates

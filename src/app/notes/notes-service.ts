@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
+
 export class Note {
 
     constructor(private title?: string, private text?: string, private color = "color1", private id = -1) { }

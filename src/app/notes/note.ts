@@ -1,5 +1,6 @@
-//noinspection TypeScriptCheckImport
-import {Note, NotesService} from "./notes-service";
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
+
+import {Note, default as NotesService} from "./notes-service";
 import * as noteEvents from "./note-events";
 
 export class NoteController {
@@ -26,6 +27,6 @@ export default (): angular.IDirective => {
         controller: NoteController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/notes/note.html"
+        templateUrl: "notes/note.html"
     };
 }

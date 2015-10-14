@@ -27,7 +27,7 @@ export class WhiteboardController {
 
     private getIndex(note) {
         return this.notes.findIndex((n:Note)=>n.getId() == note.getId());
-    };
+    }
 }
 
 export default (): angular.IDirective => {
@@ -36,6 +36,6 @@ export default (): angular.IDirective => {
         controller: WhiteboardController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/whiteboard/whiteboard.html"
+        templateUrl: "whiteboard/whiteboard.html"
     };
 }

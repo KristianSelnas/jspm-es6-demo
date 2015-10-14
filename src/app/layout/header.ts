@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/angular-ui-router/angular-ui-router.d.ts" />
 
 export class HeaderController {
 
@@ -15,6 +16,6 @@ export default (): angular.IDirective => {
         controller: HeaderController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/layout/header.html"
+        templateUrl: "layout/header.html"
     };
 }

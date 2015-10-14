@@ -1,4 +1,5 @@
-//noinspection TypeScriptCheckImport
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
+
 import {Note, NotesService} from "./notes-service";
 import * as noteEvents from "./note-events";
 
@@ -6,7 +7,7 @@ export class NoteEditController {
 
     private note: Note;
 
-    constructor(private notesService: NotesService, private $state:angular.ui.IStateService, private $scope: angular.IScope, private $stateParams: angular.ui.IStateParamsService) {
+    constructor(private notesService: NotesService, private $state:angular.ui.IStateService, private $scope: angular.IAnchorScrollProvider, private $stateParams: angular.ui.IStateParamsService) {
         let noteId = $stateParams["id"];
         if (noteId) {
             notesService.getNote(noteId).then((note: Note)=> this.note = note);
@@ -38,6 +39,6 @@ export default (): angular.IDirective => {
         controller: NoteEditController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/notes/note-edit.html"
+        templateUrl: "notes/note-edit.html"
     };
 }

@@ -1,3 +1,4 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts" />
 
 export class LayoutController {
 
@@ -11,6 +12,6 @@ export default (): angular.IDirective => {
         controller: LayoutController,
         controllerAs: "vm",
         bindToController: true,
-        templateUrl: "app/layout/layout.html"
+        templateUrl: "layout/layout.html"
     };
 }

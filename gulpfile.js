@@ -1,46 +1,58 @@
-var gulp = require('gulp'),
-    connect = require('gulp-connect'),
-    sass = require('gulp-sass');
+var gulp = require("gulp"),
+    shell = require("gulp-shell"),
+    templateCache = require("gulp-angular-templatecache"),
+    sass = require("gulp-sass"),
+    connect = require("gulp-connect");
 
-var htmlSrc = ['index.html', './app/**/*.html'],
-    tsSrc = './app/**/*.ts',
-    sassSrc = './app/style/app.scss',
-    cssSrc = './app/style/*.css';
 
-gulp.task('html', function() {
-    gulp.src(htmlSrc)
-        .pipe(connect.reload());
+var paths = {
+    ts: "./src/app/**/*.ts",
+    scss: "./src/style/app.scss",
+    templates: ["./src/app/**/*.html", "!./src/app/index.html"],
+    templatesDest: "./src/app/templates",
+    html: "./src/app/index.html",
+    temp: "./.tmp",
+    dist: "./dist"
+};
+
+gulp.task("template-cache", () => {
+    return gulp.src(paths.templates)
+        .pipe(templateCache({
+            filename: "templates.ts",
+            module: "templates",
+            standalone: "true",
+            moduleSystem: "ES6"
+        }))
+        .pipe(gulp.dest(paths.templatesDest));
 });
 
-gulp.task('ts', function() {
-    gulp.src(tsSrc)
-        .pipe(connect.reload());
+gulp.task("html", () => {
+    return gulp.src(paths.html)
+        .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('css', function() {
-    gulp.src(cssSrc)
-        .pipe(connect.reload());
-});
-
-gulp.task('sass', function() {
-   gulp.src(sassSrc)
-       .pipe(sass())
-       .pipe(gulp.dest('./app/style/'))
+gulp.task("sass", () => {
+   return gulp.src(paths.scss)
+    .pipe(sass("app.css"))
+    .pipe(gulp.dest(paths.dist));
 });
 
 
-
-gulp.task('watch', function(){
-    gulp.watch(htmlSrc, ['html']);
-    gulp.watch(tsSrc, ['ts']);
-    gulp.watch('./app/style/**/*.scss', ['sass']);
+gulp.task("watch", () => {
+    gulp.watch(paths.templates, ["bundle-sfx"]);
+    gulp.watch(paths.ts, ["bundle-sfx"]);
+    gulp.watch("./app/style/**/*.scss", ["bundle-sfx"]);
 });
 
-gulp.task('connect', function() {
+gulp.task("connect", () => {
     connect.server({
+        root: paths.dist,
         livereload: true
     });
 });
 
-// Start the tasks
-gulp.task('default', ['sass', 'connect', 'watch']);
+gulp.task("default", ["bundle-sfx", "connect", "watch"]);
+
+gulp.task("bundle-sfx", ["html", "template-cache", "sass"], shell.task([
+    `jspm bundle-sfx src/app ${paths.dist}/app.js`
+]));
