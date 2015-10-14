@@ -37,6 +37,12 @@ gulp.task("sass", () => {
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task("sourcemaps", ()=>{
+    return gulp.src(paths.ts)
+        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.write("source.map"))
+        .pipe(gulp.dest(paths.dist));
+});
 
 gulp.task("watch", () => {
     gulp.watch(paths.templates, ["bundle-sfx"]);
@@ -52,7 +58,7 @@ gulp.task("connect", () => {
 });
 
 gulp.task("bundle-sfx", ["html", "template-cache", "sass"], shell.task([
-    `jspm bundle-sfx src/app ${paths.dist}/app.js`
+    `jspm bundle-sfx src/app ${paths.dist}/app.js --source-map-contents`
 ]));
 
 gulp.task("serve", ["bundle-sfx", "connect", "watch"]);
