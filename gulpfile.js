@@ -51,8 +51,8 @@ gulp.task("connect", () => {
     });
 });
 
-gulp.task("default", ["bundle-sfx", "connect", "watch"]);
-
 gulp.task("bundle-sfx", ["html", "template-cache", "sass"], shell.task([
     `jspm bundle-sfx src/app ${paths.dist}/app.js`
 ]));
+
+gulp.task("serve", ["bundle-sfx", "connect", "watch"]);
