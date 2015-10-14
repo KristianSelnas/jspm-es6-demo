@@ -27,7 +27,7 @@ There is a mock REST server under `/mockserver`. Run this by:
 ## Running the application
 
 ```
-> gulp
+> gulp serve
 ```
 
 Open a browser at [http://localhost:8080/](http://localhost:8080/).
