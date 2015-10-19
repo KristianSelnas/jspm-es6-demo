@@ -5,3 +5,5 @@
 /mockserver/node_modules
 /dist
 /src/app/templates
+/src/app/app.js
+/src/app/app.js.map

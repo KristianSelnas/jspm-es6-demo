@@ -62,3 +62,24 @@ gulp.task("bundle-sfx", ["html", "template-cache", "sass"], shell.task([
 ]));
 
 gulp.task("serve", ["bundle-sfx", "connect", "watch"]);
+
+
+//Bundle as browser loaded bundle (not self executing - sfx)
+gulp.task("bundle", ["html", "template-cache", "sass"], shell.task([
+    `jspm bundle src/app src/app/app.js --source-map-contents`
+]));
+
+gulp.task("connect-bundle", () => {
+    connect.server({
+        root: ".",
+        livereload: true
+    });
+});
+
+gulp.task("watch-bundle", () => {
+    gulp.watch(paths.templates, ["bundle-sfx"]);
+    gulp.watch(paths.ts, ["bundle-sfx"]);
+    gulp.watch("./app/style/**/*.scss", ["bundle-sfx"]);
+});
+
+gulp.task("serve-bundle", ["bundle", "connect-bundle", "watch-bundle"]);
